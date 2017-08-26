@@ -23,7 +23,7 @@ const {
 	getCharsById
 } = require('./src/characters.js')
 
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3000
 const server = express()
 
 const queryType = new GraphQLObjectType({
