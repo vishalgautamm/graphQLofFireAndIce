@@ -21,7 +21,11 @@ npm install
 
 ## API of Fire and Ice
 
-The entire data is in `./data` folder.
+The entire data is in `./src/data` folder. It can be tested with
+```sh
+npm test
+```
+
 
 
 ## Local Server

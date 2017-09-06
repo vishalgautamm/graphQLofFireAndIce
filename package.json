@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "nodemon index.js",
-		"test:schema": "mocha src/schema/*"
+		"test": "mocha src/schema/*"
 	},
 	"dependencies": {
 		"axios": "^0.16.2",
