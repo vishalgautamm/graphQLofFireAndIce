@@ -1,18 +1,19 @@
-const graphql = require('graphql')
 const {
-  GraphQLSchema,
-  GraphQLObjectType,
-  GraphQLNonNull,
+  GraphQLInt,
   GraphQLList,
   GraphQLID,
+  GraphQLObjectType,
   GraphQLString,
-  GraphQLInt,
-  GraphQLBoolean, } = graphql
+  GraphQLNonNull,
+}  = require('graphql')
+
+const { getData, getDataById } = require('../apiHelper')
+const booksJSON = require('../../data/books.json')
 
 const bookType = new GraphQLObjectType({
   name: 'Book',
   description: 'Books written by George R. R. Martin',
-  fields: {
+  fields: () => ({
     Id: {
       type: GraphQLID,
       description: 'The id of the book',
@@ -45,7 +46,22 @@ const bookType = new GraphQLObjectType({
       type: GraphQLString,
       description: 'Year when the book was released',
     },
-  }
+
+    Authors: {
+      type: new GraphQLList(GraphQLString),
+      description: 'Authors of the book'
+    },
+    previous: {
+      type: bookType,
+      description: 'Previous book',
+      resolve: (parentVal, args) => getDataById(booksJSON, parentVal.PrecededById)  
+    },
+    next: {
+      type: bookType,
+      description: 'Next book',
+      resolve: (parentVal, args) => getDataById(booksJSON, parentVal.FollowedBy)
+    }
+  })
 })
 
-exports.bookType = bookType
+module.exports = bookType
