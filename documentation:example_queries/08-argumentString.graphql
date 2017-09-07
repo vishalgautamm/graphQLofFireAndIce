@@ -1,0 +1,6 @@
+query getCharacterByName {
+  characterByName(name: "Jaime Lannister") {
+    Id
+    Name
+  }
+}

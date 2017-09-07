@@ -1,0 +1,11 @@
+{
+  __type(name: "Character") {
+    name
+    description
+    kind
+    fields {
+      description
+      deprecationReason
+    }
+  }
+}

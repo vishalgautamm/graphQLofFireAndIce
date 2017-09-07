@@ -1,0 +1,13 @@
+query allBooks {
+  books {
+    Name
+    Id
+    previous {
+      Name
+    }
+    next {
+      Id
+      Name
+    }
+  }
+}

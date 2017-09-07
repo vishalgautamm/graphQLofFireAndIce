@@ -1,0 +1,9 @@
+{
+  character(id: 27) {
+    Name
+    children {
+      Name
+      gender
+    }
+  }
+}

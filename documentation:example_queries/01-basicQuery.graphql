@@ -1,0 +1,5 @@
+{
+  character(id: 1303) {
+    Name
+  }
+}

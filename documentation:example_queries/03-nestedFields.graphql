@@ -1,0 +1,18 @@
+{
+  character(id: 1303) {
+    Name
+    father {
+      Id
+      Name
+    }
+    mother {
+      Name
+    }
+    books {
+      Id
+      Name
+      ISBN
+      NumberOfPages
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  character(id: 583) {
+    Name
+    books {
+      ...bookFragment
+    }
+    povBooks {
+      ...bookFragment
+    }
+  }
+}
+
+fragment bookFragment on Book {
+  Id
+  Name
+  ISBN
+  NumberOfPages
+  Publisher
+  MediaType
+  Country
+  ReleaseDate
+}
